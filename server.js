@@ -12,6 +12,10 @@ app.use(express.json());
 // public folder host
 app.use(express.static('public'));
 
+// routes
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+
 // PORT listener
 app.listen(PORT, () => {
   console.log(`Server now running on port ${PORT}!`);
