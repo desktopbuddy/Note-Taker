@@ -1,4 +1,4 @@
-const fas = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 function createNewNote(body, notesArray) {
@@ -6,7 +6,7 @@ function createNewNote(body, notesArray) {
     notesArray.push(note);
     fs.writeFileSync(
         path.join(__dirname, '../../db/db.json'),
-        JSON.stringify({ notesArray }), null, 2)
+        JSON.stringify({ notesArray }, null, 2)
     );
     return note;
 }
@@ -20,3 +20,8 @@ function deleteNote(id, notes) {
         }
     });
 }
+
+module.exports = {
+    createNewNote,
+    deleteNote
+};
