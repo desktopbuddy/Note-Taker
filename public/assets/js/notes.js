@@ -10,3 +10,13 @@ function createNewNote(body, notesArray) {
     );
     return note;
 }
+
+function deleteNote(id, notes) {
+    let notesArray = notes.filter(el => {
+        if (el.id == id) {
+            return false
+        }else {
+            return true
+        }
+    });
+}
